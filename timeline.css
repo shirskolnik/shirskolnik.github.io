@@ -134,7 +134,7 @@ label {
 
 .radio:checked + .relative label {
   cursor: auto;
-  transform: translateX(42px);
+  transform: translateX(52px);
 }
 .radio:checked + .relative .circle {
   background: #f98262;
