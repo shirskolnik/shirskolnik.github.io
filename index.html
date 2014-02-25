@@ -7,14 +7,15 @@
 
   <title>CSS3 Timeline - CodePen</title>
 
-    <style>
-/* -------------------------------------
+    
+<!--/* -------------------------------------
  * For horizontal version, set the
  * $vertical variable to false
- * ------------------------------------- */
-/* -------------------------------------
+ * -------------------------------------
  * General Style
- * ------------------------------------- */
+ * ------------------------------------- */-->
+    <style>
+@import url(http://pygment_trac.css)
 @import url(http://fonts.googleapis.com/css?family=Noto+Sans);
 body {
   max-width: 1200px;
@@ -25,6 +26,46 @@ body {
   color: #eee9dc;
   background: #48b379;
 }
+
+.outer {
+  width: 100%;
+}
+
+.inner {
+  position: relative;
+  max-width: 640px;
+  padding: 20px 10px;
+  margin: 0 auto;
+}
+
+#forkme_banner {
+  display: block;
+  position: absolute;
+  top:0;
+  right: 10px;
+  z-index: 10;
+  padding: 10px 50px 10px 10px;
+  color: #fff;
+  background: url('images/blacktocat.png') #0090ff no-repeat 95% 50%;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+#header_wrap {
+  background: #212121;
+  background: -moz-linear-gradient(top, #373737, #212121);
+  background: -webkit-linear-gradient(top, #373737, #212121);
+  background: -ms-linear-gradient(top, #373737, #212121);
+  background: -o-linear-gradient(top, #373737, #212121);
+  background: linear-gradient(top, #373737, #212121);
+}
+
+#header_wrap .inner {
+  padding: 50px 10px 30px 10px;
+}
+
 
 h2 {
   margin: 3em 0 0 0;
@@ -38,33 +79,33 @@ h2 {
  * ------------------------------------- */
 #timeline {
   list-style: none;
-  margin: 50px 0 50px 120px;
-  padding-left: 30px;
+  margin: 50px 0 50px 200px;
+  padding-left: 80px;
   border-left: 8px solid #eee9dc;
 }
 #timeline li {
-  margin: 40px 0;
+  margin: 75px 0;
   position: relative;
 }
 #timeline p {
-  margin: 0 0 15px;
+  margin: 0 0 20px;
 }
 
 .date {
   margin-top: -10px;
   top: 50%;
-  left: -198px;
+  left: -250px;
   font-size: 0.95em;
-  line-height: 20px;
+  line-height: 10px;
   position: absolute;
 }
 
 .circle {
-  margin-top: -35px;
+  margin-top: -25px;
   top: 50%;
-  left: -70px;
-  width: 60px;
-  height: 60px;
+  left: -105px;
+  width: 30px;
+  height: 30px;
   background: #48b379;
   border: 5px solid #eee9dc;
   border-radius: 50%;
@@ -75,9 +116,10 @@ h2 {
 .circle_img {
   margin-top: -35px;
   top: 50%;
-  left: -70px;
+  left: -120px;
   width: 60px;
   height: 60px;
+  background-color: #48b379;
   background: url();
   background-size: contain;
   background-repeat: no-repeat;
@@ -225,74 +267,113 @@ label {
 
 <body>
 
-  <h2>CSS3 Timeline</h2>
-<p>Please set the $vertical variable to false to see the horizontal version.</p>
+<div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shirskolnik">View on GitHub</a>
+
+          <h1 id="project_title">Shir Skolnik</h1>
+          <h2 id="project_tagline">About Me </h2>
+
+        </header>
+</div>
+    
+  
 <ul id='timeline'>
   <li class='work'>
     <input class='radio' id='work5' name='works' type='radio' checked>
     <div class="relative">
-      <label for='work5'>Lorem ipsum dolor sit amet</label>
+      <label for='work5'>University of California, Berkeley</label>
       <span class='date'>Education</span>
       <span class='circle_img' style="background: url(http://grfx.cstv.com/schools/cal/graphics/cal-wp-yellow-1024.jpg); background-size: 80px; background-repeat:no-repeat; background-position: 50% 50%"></span>
     </div>
     <div class='content'>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+        Bachelor's Degree in Physics: May 2009.
+          <br>
+          <small>Emphasis in Astrophysics</small>
       </p>
     </div>
   </li>
   <li class='work'>
     <input class='radio' id='work4' name='works' type='radio'>
     <div class="relative">
-      <label for='work4'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>11 May 2013</span>
-      <span class='circle'></span>
+      
+      <span class='date'>Experience</span>
+      
     </div>
-    <div class='content'>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-      </p>
-    </div>
+    
   </li>
   <li class='work'>
     <input class='radio' id='work3' name='works' type='radio'>
     <div class="relative">
-      <label for='work3'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>10 May 2013</span>
+      <label for='work3'>"Jill of All Trades" at <small>Concrete Creations</small></label>
+      <span class='date'>01/2011 - Present</span>
       <span class='circle'></span>
     </div>
     <div class='content'>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+        Customer service, creating invoices, created master price list, started company with Quickbooks, light accounting, sales, working in Adobe Illustrator, website maintenance, newsletters, iMovie - producing content for YouTube, Facebook marketing, creating advertisements, google+
       </p>
     </div>
   </li>
   <li class='work'>
     <input class='radio' id='work2' name='works' type='radio'>
     <div class="relative">
-      <label for='work2'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>09 May 2013</span>
+      <label for='work2'>Executive Assistant and Administrator <small>at Air Dimensional Design, Inc.</small></label>
+      <span class='date'>06/2012 - 06/2013</span>
       <span class='circle'></span>
     </div>
     <div class='content'>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+        Project Management, Office work, reorganized product list in Quickbooks, ran Quickbooks sales reports, ACT, product research, patent searches, trademark applications, light photoshop work, market research, marketing campaigns, project management, business development, helped launch new product line, set up employee Time Clock and connected it with Quickbooks to update payroll system, Facebook, YouTube, selling items on eBay
       </p>
     </div>
   </li>
   <li class='work'>
     <input class='radio' id='work1' name='works' type='radio'>
     <div class="relative">
-      <label for='work1'>Lorem ipsum dolor sit amet</label>
-      <span class='date'>08 May 2013</span>
+      <label for='work1'>Tutor</label>
+      <span class='date'>2010 - present</span>
       <span class='circle'></span>
     </div>
     <div class='content'>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
+        Math, Algebra 1 & 2, Geometry, Trigonometry, PreCalculus, AP Calculus AB & BC, College Algebra, College Calculus, High School Science, Physics, SAT Math, SAT 2 Math 1 & 2
       </p>
     </div>
   </li>
+  <li class='work'>
+    <input class='radio' id='work6' name='works' type='radio'>
+    <div class="relative">
+      <label for='work6'>Teacher at <small>Excelsior School</small></label>
+      <span class='date'>08/2009 - 06/2010</span>
+      <span class='circle'></span>
+    </div>
+      <div class='content'>
+        <p>
+        Wrote all lesson plans, tests, syllabi, and study material for Geometry, Algebra 2, PreCalculus, AP Calculus, Physics, AP Physics B (100% pass rate), students were International learning English as a second language
+        </p>
+      </div>
+    </li>
+  <li class='work'>
+    <input class='radio' id='work7' name='works' type='radio'>
+    <div class="relative">
+      <label for='work7'>Skills</label>
+      <span class='date'>Skills</span>
+      <span class='circle_img' style="background:url(images/skills.png); background-size:60px"></span>
+    </div>
+      <div class='content'>
+        <p>
+        Personal Skills: Some programming skills, strong analytical skills, good at problem solving, eager to learn and develop new skills, very adaptable, detail oriented, data analysis.
+            <br>
+      Laboratory Skills: Use of oscilloscopes, intermediate Labview, circuitry skills, soldering, use of several types of lasers, use of other physics lab equipment, writing lab reports
+            <br>
+        Language: Fluent in spoken Hebrew, beginning reading and writing skills
+            
+        </p>
+      </div>
+    </li>
+    
 </ul>
 
   <script src='http://codepen.io/assets/libs/fullpage/none.js'></script>
