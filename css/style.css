@@ -9,7 +9,7 @@
 body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10%;
+  padding: 0 5%;
   font-size: 100%;
   font-family: "Noto Sans", sans-serif;
   color: #eee9dc;
@@ -28,7 +28,7 @@ h2 {
  * ------------------------------------- */
 #timeline {
   list-style: none;
-  margin: 50px 0 70px 170px;
+  margin: 50px 0 50px 120px;
   padding-left: 30px;
   border-left: 8px solid #eee9dc;
 }
@@ -134,7 +134,7 @@ label {
 
 .radio:checked + .relative label {
   cursor: auto;
-  transform: translateX(52px);
+  transform: translateX(62px);
 }
 .radio:checked + .relative .circle {
   background: #f98262;
