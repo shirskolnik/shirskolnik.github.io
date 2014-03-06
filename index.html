@@ -5,7 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <title>CSS3 Timeline - CodePen</title>
+  <title>Shir Skolnik</title>
 
     
 <!--/* -------------------------------------
@@ -25,7 +25,12 @@ body {
   font-family: "Noto Sans", sans-serif;
   color: #eee9dc;
   background: #48b379;
+  vertical-align: baseline;
+  
 }
+
+
+/*** Header ***/
 
 .outer {
   width: 100%;
@@ -55,10 +60,6 @@ body {
 
 #header_wrap {
   background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
   background: linear-gradient(top, #373737, #212121);
 }
 
@@ -77,6 +78,7 @@ h2 {
 /* -------------------------------------
  * timeline
  * ------------------------------------- */
+
 #timeline {
   list-style: none;
   margin: 50px 0 50px 200px;
@@ -126,12 +128,26 @@ h2 {
   background-position: 50% 50%;
   border: 5px solid #eee9dc;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   display: block;
   position: absolute;
 }
 
+.items {
+overflow: hidden;
+}
+.item {
+width: 100%;
+overflow: hidden;
+position: relative;
+height: 768px;
+}
+.innerc, .innerc-lev1, .innerc-lev2 {
+width: 100%;
+height: 100%;
+position: absolute;
+z-index: 1;
+}
+        
 .content {
   max-height: 20px;
   padding: 50px 20px 0;
@@ -140,6 +156,7 @@ h2 {
   border-style: solid;
   border-radius: 0.5em;
   position: relative;
+  z-index: 2;
 }
 .content:before, .content:after {
   content: "";
@@ -262,6 +279,11 @@ label {
 </style>
 
   <script src="js/prefixfree.min.js"></script>
+  <script src="js/modernizr.custom.37797.js"></script> 
+		<!-- Grab Google CDN's jQuery. fall back to local if necessary --> 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
+		<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
+		<script src="js/parallax.js"></script>
 
 </head>
 
@@ -282,10 +304,12 @@ label {
   <li class='work'>
     <input class='radio' id='work5' name='works' type='radio' checked>
     <div class="relative">
+    
       <label for='work5'>University of California, Berkeley</label>
       <span class='date'>Education</span>
       <span class='circle_img' style="background: url(http://grfx.cstv.com/schools/cal/graphics/cal-wp-yellow-1024.jpg); background-size: 80px; background-repeat:no-repeat; background-position: 50% 50%"></span>
     </div>
+    
     <div class='content'>
       <p>
         Bachelor's Degree in Physics: May 2009.
