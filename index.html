@@ -1,419 +1,169 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Shir Skolnik</title>
+  <meta name="description" content="About Me">
+  <meta name="author" content="Shir Skolnik">
 
-    
-<!--/* -------------------------------------
- * For horizontal version, set the
- * $vertical variable to false
- * -------------------------------------
- * General Style
- * ------------------------------------- */-->
-    <style>
-@import url(http://pygment_trac.css)
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
-body {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 5%;
-  font-size: 100%;
-  font-family: "Noto Sans", sans-serif;
-  color: #eee9dc;
-  background: grey;
-  vertical-align: baseline;
-  
-}
-
-
-/*** Header ***/
-
-.outer {
-  width: 100%;
-}
-
-.inner {
-  position: relative;
-  max-width: 640px;
-  padding: 20px 10px;
-  margin: 0 auto;
-}
-
-#forkme_banner {
-  display: block;
-  position: absolute;
-  top:0;
-  right: 10px;
-  z-index: 10;
-  padding: 10px 50px 10px 10px;
-  color: #fff;
-  background: url('images/blacktocat.png') #0090ff no-repeat 95% 50%;
-  font-weight: 700;
-  box-shadow: 0 0 10px rgba(0,0,0,.5);
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-#header_wrap {
-  background: #212121;
-  background: linear-gradient(top, #373737, #212121);
-}
-
-#header_wrap .inner {
-  padding: 50px 10px 30px 10px;
-}
-
-
-h2 {
-  margin: 3em 0 0 0;
-  font-size: 1.5em;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* -------------------------------------
- * timeline
- * ------------------------------------- */
-
-#timeline {
-  list-style: none;
-  margin: 50px 0 50px 200px;
-  padding-left: 80px;
-  border-left: 8px solid #eee9dc;
-}
-#timeline li {
-  margin: 75px 0;
-  position: relative;
-}
-#timeline p {
-  margin: 0 0 20px;
-}
-
-.date {
-  margin-top: -10px;
-  top: 50%;
-  left: -250px;
-  font-size: 0.95em;
-  line-height: 10px;
-  position: absolute;
-}
-
-.circle {
-  margin-top: -25px;
-  top: 50%;
-  left: -105px;
-  width: 30px;
-  height: 30px;
-  background: grey;
-  border: 5px solid #eee9dc;
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-}
-
-.circle_img {
-  margin-top: -35px;
-  top: 50%;
-  left: -120px;
-  width: 60px;
-  height: 60px;
-  background-color: grey;
-  background: url();
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  border: 5px solid #eee9dc;
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-}
-
-.items {
-overflow: hidden;
-}
-.item {
-width: 100%;
-overflow: hidden;
-position: relative;
-height: 768px;
-}
-.innerc, .innerc-lev1, .innerc-lev2 {
-width: 100%;
-height: 100%;
-position: absolute;
-z-index: 1;
-}
-        
-.content {
-  max-height: 20px;
-  padding: 50px 20px 0;
-  border-color: transparent;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 0.5em;
-  position: relative;
-  z-index: 2;
-}
-.content:before, .content:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border: solid transparent;
-  position: absolute;
-  pointer-events: none;
-  right: 100%;
-}
-.content:before {
-  border-right-color: inherit;
-  border-width: 20px;
-  top: 50%;
-  margin-top: -20px;
-}
-.content:after {
-  border-right-color: grey;
-  border-width: 17px;
-  top: 50%;
-  margin-top: -17px;
-}
-.content p {
-  max-height: 0;
-  color: transparent;
-  text-align: justify;
-  word-break: break-word;
-  hyphens: auto;
-  overflow: hidden;
-}
-
-label {
-  font-size: 1.3em;
-  position: absolute;
-  z-index: 100;
-  cursor: pointer;
-  top: 20px;
-  transition: transform 0.2s linear;
-}
-
-.radio {
-  display: none;
-}
-
-.radio:checked + .relative label {
-  cursor: auto;
-  transform: translateX(62px);
-}
-.radio:checked + .relative .circle {
-  background: #f98262;
-}
-.radio:checked ~ .content {
-  max-height: 180px;
-  border-color: #eee9dc;
-  margin-right: 20px;
-  transform: translateX(40px);
-  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
-}
-.radio:checked ~ .content p {
-  max-height: 200px;
-  color: #eee9dc;
-  transition: color 0.3s linear 0.3s;
-}
-
-/* -------------------------------------
- * mobile phones (vertical version only)
- * ------------------------------------- */
-@media screen and (max-width: 767px) {
-  #timeline {
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none;
-  }
-  #timeline li {
-    margin: 50px 0;
-  }
-
-  label {
-    width: 85%;
-    font-size: 1.1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: block;
-    transform: translateX(18px);
-  }
-
-  .content {
-    padding-top: 45px;
-    border-color: #eee9dc;
-  }
-  .content:before, .content:after {
-    border: solid transparent;
-    bottom: 100%;
-  }
-  .content:before {
-    border-bottom-color: inherit;
-    border-width: 17px;
-    top: -16px;
-    left: 50px;
-    margin-left: -17px;
-  }
-  .content:after {
-    border-bottom-color: grey;
-    border-width: 20px;
-    top: -20px;
-    left: 50px;
-    margin-left: -20px;
-  }
-  .content p {
-    font-size: 0.9em;
-    line-height: 1.4;
-  }
-
-  .circle, .date {
-    display: none;
-  }
-}
-
-</style>
-
-  <script src="js/prefixfree.min.js"></script>
-  <script src="js/modernizr.custom.37797.js"></script> 
-		<!-- Grab Google CDN's jQuery. fall back to local if necessary --> 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script> 
-		<script>!window.jQuery && document.write('<script src="/js/jquery-1.6.1.min.js"><\/script>')</script>
-		<script src="js/parallax.js"></script>
-
+  <!-- Mmmmm, Google Web Fonts. That's a paddlin'. -->
+  <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700&v2' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/shirskolnik">View on GitHub</a>
-<a href="http://www.linkedin.com/in/shirskolnik">
-      
-          <img style = "margin-left:492px" src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Shir Skolnik's profile on LinkedIn">
+  <div id="main" role="main">
+
+	<!-- Section #1 / Intro -->
+	<section id="first" class="story" data-speed="8" data-type="background">    	
+		<div class="name" data-type="sprite" data-offsetY="100" data-Xposition="50%" data-speed="-2"></div>
+<!--        <div class="back" data-speed="8" data-type="sprite"></div>-->
+		<article>
+
+			
+			<p>Words and pictures by Richard Shepherd / Twitter: <a href="http://twitter.com/richardshepherd" target="_blank">@richardshepherd</a> / Web: <a href="http://richardshepherd.com">richardshepherd.com</a></p>
+			<p>GitHub: <a href="https://github.com/richardshepherd/Parallax-Scrolling/">Fork it here!</a></p>
+	    </article>
+	</section>
+
+	<!-- Section #2 / Early Years -->
+	<section id="second" class="story" data-speed="4" data-type="background">
+		<article>
+			<h2>The Early Years</h2>
+		    	<p>I was born in Israel and moved to the San Fernando Valley area of Los Angeles, California when I was just shy of 3 years old. Even though Hebrew is my first language, I still speak it with a slight American accent</p>
+                <p>I was enrolled at a Montessori school from Preschool through the 6th grade, where I developed my independent learning style. The hands on style, the use of many senses in learning, and the ability to work at my own pace was very beneficial to me. I have carried that motivation to teach myself throughout my schooling, career, and life.
+                </p>
+                <p>
+From 7th grade through the end of high school I went to the Magnet School Sherman Oaks Center for Enriched Studies (SOCES). At SOCES I was introduced, through a phenomenal teacher, to the world of physics research. This teacher was very influential in my decision to study Physics. I approached him with my goal to study physics in the 9th grade and he never let me forget that goal.
+                </p>		
+		</article>
+	</section>
+	
+	<!-- Section #3 / Cal -->
+  <div class="position: relative">
+	<section id="third" class="story" data-speed="6" data-type="background" data-offsetY="250">
         
-    </a>
-          <h1 id="project_title">Shir Skolnik</h1>
-          <h2 id="project_tagline">About Me </h2>
+        <div class="photograph" data-type="sprite" data-offsetY="1250" data-Xposition="25%" data-speed="2"></div>
+        <div class="logo" data-type="sprite" data-offsetY="950" data-Xposition="30%" data-speed="3">
+       </div>
+    	<article>
+    		<h2>I wish I could go back to College</h2>
+	    	<div class="textbox">    	
+		    	<p>
+I started at Cal knowing that I would major in Physics or Astrophysics, or perhaps both. In the 8th grade my science teacher brought in a guest speaker who was an astrophysicist. He gave a speech and answered class questions. From that moment I knew that I wanted to study physics.
+                </p>
+                <p>
+I ended up majoring in Physics. I took many astrophysics courses, but didn't see the point of getting the minor in it. One of my favorite courses at Berkeley was Physics 139: Relativity, covering Special and General Relativity. Despite the complexity of the mathematics, there was an elegance to the equations and solutions that I really enjoyed.
+                </p>
+                <p>
+In addition to studying physics, I also got involved with a few student groups on campus. I ended up being in the leadership of one club for 2 years. Starting as the Social Chair on the Board of Directors, becoming Secretary on the Executive Board the next semester, and ending as the Internal Vice President my junior year. I worked quite a bit on event planning, working with the campus to coordinate various aspects of the internal workings of events, I also worked with media, and in membership increase and retention.
+                </p>
+                </div>
+		  
+    	</article>
+	</section>	
+  </div>
 
-        </header>
-</div>
-    
-  
-<ul id='timeline'>
-  <li class='work'>
-    <input class='radio' id='work5' name='works' type='radio' checked>
-    <div class="relative">
-    
-      <label for='work5'>University of California, Berkeley</label>
-      <span class='date'>Education</span>
-      <span class='circle_img' style="background: url(http://grfx.cstv.com/schools/cal/graphics/cal-wp-yellow-1024.jpg); background-size: 80px; background-repeat:no-repeat; background-position: 50% 50%"></span>
-    </div>
-    
-    <div class='content'>
-      <p>
-        Bachelor's Degree in Physics: May 2009.
-          <br>
-          <small>Emphasis in Astrophysics</small>
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work4' name='works' type='radio'>
-    <div class="relative">
-      
-      <span class='date'>Experience</span>
-      
-    </div>
-    
-  </li>
-  <li class='work'>
-    <input class='radio' id='work3' name='works' type='radio'>
-    <div class="relative">
-      <label for='work3'>"Jill of All Trades" at <small>Concrete Creations</small></label>
-      <span class='date'>01/2011 - Present</span>
-      <span class='circle'></span>
-    </div>
-    <div class='content'>
-      <p>
-        Customer service, creating invoices, created master price list, started company with Quickbooks, light accounting, sales, working in Adobe Illustrator, website maintenance, newsletters, iMovie - producing content for YouTube, Facebook marketing, creating advertisements, google+
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work2' name='works' type='radio'>
-    <div class="relative">
-      <label for='work2'>Executive Assistant and Administrator <small>at Air Dimensional Design, Inc.</small></label>
-      <span class='date'>06/2012 - 06/2013</span>
-      <span class='circle'></span>
-    </div>
-    <div class='content'>
-      <p>
-        Project Management, Office work, reorganized product list in Quickbooks, ran Quickbooks sales reports, ACT, product research, patent searches, trademark applications, light photoshop work, market research, marketing campaigns, project management, business development, helped launch new product line, set up employee Time Clock and connected it with Quickbooks to update payroll system, Facebook, YouTube, selling items on eBay
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work1' name='works' type='radio'>
-    <div class="relative">
-      <label for='work1'>Tutor</label>
-      <span class='date'>2010 - present</span>
-      <span class='circle'></span>
-    </div>
-    <div class='content'>
-      <p>
-        Math, Algebra 1 & 2, Geometry, Trigonometry, PreCalculus, AP Calculus AB & BC, College Algebra, College Calculus, High School Science, Physics, SAT Math, SAT 2 Math 1 & 2
-      </p>
-    </div>
-  </li>
-  <li class='work'>
-    <input class='radio' id='work6' name='works' type='radio'>
-    <div class="relative">
-      <label for='work6'>Teacher at <small>Excelsior School</small></label>
-      <span class='date'>08/2009 - 06/2010</span>
-      <span class='circle'></span>
-    </div>
-      <div class='content'>
-        <p>
-        Wrote all lesson plans, tests, syllabi, and study material for Geometry, Algebra 2, PreCalculus, AP Calculus, Physics, AP Physics B (100% pass rate), students were International learning English as a second language
-        </p>
-      </div>
-    </li>
-  <li class='work'>
-    <input class='radio' id='work7' name='works' type='radio'>
-    <div class="relative">
-      <label for='work7'>Skills</label>
-      <span class='date'>Skills</span>
-      <span class='circle_img' style="background:url(images/skills.png); background-size:60px"></span>
-    </div>
-      <div class='content'>
-        <p>
-        Personal Skills: Some programming skills, strong analytical skills, good at problem solving, eager to learn and develop new skills, very adaptable, detail oriented, data analysis.
-            <br>
-      Laboratory Skills: Use of oscilloscopes, intermediate Labview, circuitry skills, soldering, use of several types of lasers, use of other physics lab equipment, writing lab reports
-            <br>
-        Language: Fluent in spoken Hebrew, beginning reading and writing skills
-            
-        </p>
-      </div>
-    </li>
-    
-</ul>
+	<!-- Section #4 / Research -->
+	<section id="fourth" class="story" data-speed="8" data-type="background" data-offsetY="250">
+    	<article>
+    		<h2>Research</h2>
+	    	<div class="textbox">    	
+		    	<p>
+I have been involved in research throughout my life. In high school I took part in 2 research programs aimed at high school students. The first was through an organization at UCLA called LAPTAG which allowed high schoolers to experience the research lab environment. This research was on Plasma Physics, UCLA has several plasma machines where research on plasma is conducted. One of them is dedicated to high schoolers.
+                </p>
+                <p>
+The other program through Caltech was about Cosmic Rays, it was called CHICOS. CHICOS put Cosmic Ray Detectors in high schools throughout the San Fernando and San Gabriel Valleys and collected the data. They would run programs for high schoolers to build the detectors and analyze the data. Using existing programs and collected data we were able to make educated guesses at the initial particle energy and the “shape” of the cosmic ray shower. The goal was to eventually guess where the highest energy initial particles were coming from, and whether they could have come from various high energy cosmic events, such as gamma ray bursts or active galactic nuclei. 
+                </p>
+                <p>
+The summer before my senior year I took my Taglit Birthright trip. Since almost my entire extended family is there, I knew I would extend my trip. I decided that this was a good opportunity to get some more research experience so I found a lab to work in for a month in the summer. The lab was at the Israel Institute of Technology (Technion) and the research was on the Josephson Effect in Bose-Einstein Condensates. The research involved hands on work with lasers and optics, data analysis in Excel, some work in Matlab, and image analysis. I learned about Evaporative Cooling, Laser Cooling, Magnetic Traps, and various imaging techniques.
+                </p>
+                <p>
+After getting back from that summer in Israel, I joked that with my previous research in Plasma Physics, I was now an expert on all 5 states of matter.
+                </p>
+		    </div>
+    	</article>
+        
+        
+	</section>
+    <!-- Section #5 / Work Projects -->
+    <div class="position:relative">
+	<section id="fifth" class="story" data-speed="8" data-type="background" data-offsetY="450">
+        <!-- Add a different sprite also change bg in css-->
+		<!--<div class="photograph" data-type="sprite" data-offsetY="1250" data-Xposition="5%" data-speed="2"></div> -->
+    	<article>
+    		<h2>Projects</h2>
+	    	<div class="textbox">    	
+		    	<p>
+I consider myself a Jill of all Trades – as such I have a diverse set of job experience and work projects. This is my full resume (link to timeline resume). I have worked on some interesting projects. I have a background in teaching and tutoring and am a quick learner myself, so I have often taken new programs, learned them, and taught them to others. Recently I taught myself Adobe Illustrator and taught it to my father for use in creating sketches of our products (at Concrete Creations) .
+                </p>
+                <p>
+At Air Dimensional Design, Inc. (AirDD) I did Project Management for several new technology initiatives. One was a major overhaul of the way they did their inventory control. They had made the decision to go with the WASP Inventory Control System and I was tasked with implementing the system. I created the database, solving all the issues that arose, and attempting to bend and work the system to their business' needs. I then led the team in learning the system, and populating the database with actual inventory items.
+                </p>
+                <p>
+At AirDD I was also very involved in the launch of a new product line. Doing research, purchasing the products, coordinating shipping, researching more local sources, creating marketing material, creating instructional material, and eventually helping with the launch of the products.
+                </p>
+                <p>
+At Concrete Creations I have worked extensively on their new website, adding content and searching for design and optimization solutions. Additionally I have launched their You Tube channel. I produced instructional videos, aimed at helping clients choose and install our products. I have been very involved at all levels of marketing including social media marketing, helping with writing and editing material, and working on strategy.
+                </p>
 
-  <script src='http://codepen.io/assets/libs/fullpage/none.js'></script>
+		    </div>
+    	</article>
+	</section>
+    </div>
+<!-- Section #6 / Coding -->
+	<section id="sixth" class="story" data-speed="10" data-type="background" data-offsetY="300">
+    	<article>
+    		<h2 style="font-family: sans-serif; color:#00FF00;">Coding:</h2>
+	    	<div class="textbox">    	
+		    	<p>
+I have been doing light programming since starting at Berkeley. Many of my physics courses required some form of computation. At Berkeley I took a Computer Science course on Java, and did data analysis and computation in Excel, Matlab, and IDL.
+                </p>
+                <p>
+Since then I have taken the MIT OpenCourseWare course on Matlab and Python. I have done several courses at Codecademy, including Python and HTML/CSS. I have also been working through Berkeley's self paced Python course, and the Computer Science 61 series. These have significantly upped my programming knowledge and ability.
+                </p>
+                <p>
+In addition to this, I have 2 Mac Emulators set up, allowing me to use old Mac Operating Systems. I have been an Apple person for my whole life, and have gone through every operating system since Mac OS 7. These emulators allow me to play some of my old computer games, including one of my all time favorites: Where in the World is Carmen Sandiego. I loved all incarnations of Carmen Sandiego, the old games from the '80s on DOS, the games I played on Mac in the '90s, the board games, and the TV shows.
+                </p>
+		    </div>
+    	</article>
+      </section>
+      
+   </section>
+    </div>
+<!-- Section #7 / Hobbies -->
+	<section id="seventh" class="story" data-speed="10" data-type="background" data-offsetY="300">
+    	<article>
+    		<h2>Hobbies</h2>
+	    	<div class="textbox">    	
+		    	<p>
+At this point I would consider both coding and web design hobbies, as I learn and build my knowledge and skills. I also love cooking and enjoy brewing my own beer. I'm a puzzle addict – puzzles of all kinds – jigsaw, crosswords, word, math, and logic. I have always been an avid reader. I also enjoy working with my hands, building all sorts of things, and creative artistic endeavors including painting. I was a piano player for many years, but I never got to an advanced level.
+                </p>
+                
+		    </div>
+    	</article>
+      </section>   
+      
+	<!-- Section #5 / The End
+	<section id="theend" class="story" data-speed="8" data-type="background" data-offsetY="250">    	
+		<div class="byebye" data-type="sprite" data-offsetY="-2600" data-Xposition="50%" data-speed="-2"></div>	
+	</section> -->
+	
+  </div> <!-- // End of #main -->
+
+
+
+  <!-- Our Javascript, starting with jQuery -->
+  <script src='js/libs/jquery-1.6.1.min.js'></script>
+  <script src="js/script.js"></script>
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg");
+  <![endif]-->
 
 </body>
-<footer style="margin-bottom:20px"> 
-    
-    <a href="http://www.linkedin.com/in/shirskolnik">
-      
-          <img src="http://s.c.lnkd.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Shir Skolnik's profile on LinkedIn">
-        
-    </a>
-    <p>Base Timeline code forked from codepen, A Pen by Peiwen Lu</p>
-    </footer>
 </html>
